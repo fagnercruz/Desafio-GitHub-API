@@ -1,0 +1,17 @@
+.btn-container {
+    display: flex;
+}
+
+.btn-container button {
+    border-radius: 10px;
+    width: 101px;
+    height: 40px;
+    text-decoration: none;
+    
+}
+
+.btn p {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}

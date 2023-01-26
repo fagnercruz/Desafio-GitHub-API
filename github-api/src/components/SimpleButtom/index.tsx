@@ -1,8 +1,17 @@
 import './style.css';
 
-const SimpleButtom = () => {
+
+type Props = {
+    texto: string;
+}
+
+const SimpleButtom = ({texto}: Props) => {
     return (
-        <div className="buttom"></div>
+        <div className="btn-container">
+            <button className='btn btn-primary'>
+                <p>{texto}</p>
+            </button>
+        </div>
     );
 };
 
