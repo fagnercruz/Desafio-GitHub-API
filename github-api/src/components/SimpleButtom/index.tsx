@@ -8,7 +8,7 @@ type Props = {
 const SimpleButtom = ({texto}: Props) => {
     return (
         <div className="btn-container">
-            <button className='btn btn-primary'>
+            <button type='submit' className='btn btn-primary'>
                 <p>{texto}</p>
             </button>
         </div>
