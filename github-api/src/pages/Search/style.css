@@ -18,3 +18,10 @@
     box-sizing: border-box;
     margin-bottom: 20px;
 }
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -33,7 +33,7 @@ const Search = () => {
   const loaderProps = {
     loading: isLoading,
     size: 60,
-    colors: ['#407bff','#407bff', '#407bff']
+    colors: ['#60666d','#adbac7', '#60666d']
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,7 +79,7 @@ const Search = () => {
       </div>
       {
         isLoading ? (
-          <div className="moldura-card">
+          <div className="moldura-card col-xl-12 loader">
             <BouncyBallsLoader {...loaderProps} />
           </div>
         ) : (
