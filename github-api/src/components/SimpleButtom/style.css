@@ -1,7 +1,3 @@
-.btn-container {
-    display: flex;
-}
-
 .btn-container button {
     border-radius: 10px;
     width: 101px;

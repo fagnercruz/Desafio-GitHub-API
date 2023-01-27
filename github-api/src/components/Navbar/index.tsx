@@ -1,7 +1,7 @@
 import "./style.css";
 import "@popperjs/core";
 import "bootstrap/js/src/collapse";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,7 +10,6 @@ const Navbar = () => {
         <Link to="/" className="navLogo">
           <h4>Github API</h4>
         </Link>
-
       </div>
     </nav>
   );

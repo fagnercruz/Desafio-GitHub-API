@@ -1,18 +1,15 @@
-import './style.css';
-
+import "./style.css";
 
 type Props = {
-    texto: string;
-}
+  texto: string;
+};
 
-const SimpleButtom = ({texto}: Props) => {
-    return (
-        <div className="btn-container">
-            <button type='submit' className='btn btn-primary'>
-                <p>{texto}</p>
-            </button>
-        </div>
-    );
+const SimpleButtom = ({ texto }: Props) => {
+  return (
+    <button type="submit" className="btn btn-primary">
+      <p>{texto}</p>
+    </button>
+  );
 };
 
 export default SimpleButtom;
