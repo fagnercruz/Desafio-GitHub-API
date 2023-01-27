@@ -1,5 +1,6 @@
 import axios from "axios";
 import Resultcard from "components/Resultcard";
+import SimpleButtom from "components/SimpleButtom";
 import { useState } from "react";
 import "./style.css";
 
@@ -60,9 +61,7 @@ const Search = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            <p>Começar</p>
-          </button>
+          <SimpleButtom texto="Começar" />
         </form>
       </div>
       {gitJson && (
