@@ -10,6 +10,11 @@
     width: 400px;
     background-color: #2d333b;
 }
+.input:focus {
+     background-color: #60666d;
+     border-color: #000;
+     color: #000;
+}
 
 .moldura-card {
     border: 1px solid #60666d;

@@ -72,6 +72,7 @@ const Search = () => {
               value={formData.githubUser}
               placeholder="Digite o nome do usuário para pesquisar"
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <SimpleButtom texto="Começar" />
