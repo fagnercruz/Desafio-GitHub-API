@@ -2,6 +2,7 @@ import axios from "axios";
 import Resultcard from "components/Resultcard";
 import SimpleButtom from "components/SimpleButtom";
 import { useState } from "react";
+import { BouncyBallsLoader } from "react-loaders-kit";
 import "./style.css";
 
 type FormData = {
@@ -25,6 +26,16 @@ const Search = () => {
   //UseState para os dados JSON da API
   const [gitJson, setGitJson] = useState<GitJson>();
 
+  //UseState para o loader
+  const [isLoading, setIsLoading] = useState(false);
+  
+  //Props para ser usada no react-loaders-kit (outro tipo de loader)
+  const loaderProps = {
+    loading: isLoading,
+    size: 60,
+    colors: ['#407bff','#407bff', '#407bff']
+  }
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -33,7 +44,7 @@ const Search = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData.githubUser);
+    setIsLoading(true);
     axios
       .get(`https://api.github.com/users/${formData.githubUser}`)
       .then((resultado) => {
@@ -41,6 +52,8 @@ const Search = () => {
       })
       .catch((error) => {
         setGitJson(undefined);
+      }).finally(()=> {
+        setIsLoading(false);
       });
   };
 
@@ -64,17 +77,26 @@ const Search = () => {
           <SimpleButtom texto="Começar" />
         </form>
       </div>
-      {gitJson && (
-        <div className="moldura-card">
-          <Resultcard
-            avatar={gitJson?.avatar_url}
-            followers={gitJson?.followers}
-            location={gitJson?.location}
-            url={gitJson?.html_url}
-            name={gitJson?.name}
-          />
-        </div>
-      )}
+      {
+        isLoading ? (
+          <div className="moldura-card">
+            <BouncyBallsLoader {...loaderProps} />
+          </div>
+        ) : (
+           gitJson && (
+            <div className="moldura-card">
+              <Resultcard
+                avatar={gitJson?.avatar_url}
+                followers={gitJson?.followers}
+                location={gitJson?.location}
+                url={gitJson?.html_url}
+                name={gitJson?.name}
+              />
+            </div>
+          )
+        )
+      }
+      
     </div>
   );
 };
